@@ -17,6 +17,8 @@ const LoginPage = () => {
         }
     };
 
+    console.log('LoginPage rendered'); // Add this line
+
     return (
         <form onSubmit={handleSubmit}>
             <input
