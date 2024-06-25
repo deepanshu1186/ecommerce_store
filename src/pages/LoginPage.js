@@ -10,7 +10,9 @@ const LoginPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await login(username, password);
+            let res = await login(username, password);
+            console.log(res)
+            
             // redirect to dashboard or other page
         } catch (error) {
             console.error('Failed to login:', error);

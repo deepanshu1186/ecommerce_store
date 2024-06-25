@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
     });
 
     useEffect(() => {
+        console.log("auth " , auth)
         if (auth.token) {
             axios.get('/profile')
                 .then(response => setAuth({ ...auth, user: response.data }))
@@ -19,12 +20,14 @@ const AuthProvider = ({ children }) => {
     }, [auth.token]);
 
     const login = async (username, password) => {
+        console.log("login in AuthContext")
         const response = await axios.post('/login', { username, password });
         localStorage.setItem('token', response.data.token);
         setAuth({ token: response.data.token, user: response.data.user });
     };
 
     const signup = async (username, password, email) => {
+        console.log("signup on auth context")
         const response = await axios.post('/signup', { username, password, email });
         localStorage.setItem('token', response.data.token);
         setAuth({ token: response.data.token, user: response.data.user });
