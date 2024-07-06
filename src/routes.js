@@ -2,8 +2,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
-import DashboardPage from './pages/DashboardPage';
 import LandingPage from './pages/LandingPage';
+import CartPage from './pages/CartPage';
+
+import NotFound from './pages/NotFound';
+//import DashboardPage from './pages/DashboardPage';
 // import SignupPage from './pages/SignupPage';
 // import ProfilePage from './pages/ProfilePage';
 // import ProductFormPage from './pages/ProductFormPage';
@@ -17,10 +20,12 @@ const AppRoutes = () => (
         <AuthProvider>
             {/* <Navbar /> */}
             <Routes>
-                <Route path="/" element={<LandingPage />} />
+                {<Route path="/" element={<LandingPage />} />}
                 <Route path="/login" element={<LoginPage />} />
-                <Route path="/dashboard" element={<DashboardPage />} />
-                {/* <Route path="/signup" element={<SignupPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="*" element={NotFound} />
+                {/*<Route path="/dashboard" element={<DashboardPage />} />
+                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/create-product" element={<ProductFormPage />} />
                 <Route path="/products" element={<ProductListPage />} />

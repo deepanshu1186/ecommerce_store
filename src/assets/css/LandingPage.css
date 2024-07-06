@@ -12,7 +12,7 @@ body, html {
 }
 
 .header {
-    background: #282c34;
+    background: hsl(220, 76%, 61%);
     padding: 1rem;
     color: white;
 }
@@ -89,7 +89,7 @@ body, html {
 }
 
 .footer {
-    background: #282c34;
+    background: hsl(220, 76%, 61%);
     color: white;
     text-align: center;
     padding: 1rem;
